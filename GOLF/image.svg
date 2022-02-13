@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="640" height="480" viewBox="0 0 640 480" xml:space="preserve">
+<desc>Created with Fabric.js 3.6.3</desc>
+<defs>
+</defs>
+<g transform="matrix(7.55 0 0 6.4 332.7 257.6)"  >
+<polygon style="stroke: rgb(0,0,0); stroke-width: 8; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(176,229,78); fill-rule: nonzero; opacity: 1;"  points="-50,-50 -50,50 50,50 50,-50 " />
+</g>
+<g transform="matrix(1.52 0 0 2.91 454.19 378.5)"  >
+<path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(235,235,191); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-236.15, -327.74)" d="M 75 469 Q 174 491 247 387 Q 299 299 326 277 Q 433 177 496 306 Q 543 468 575 405 Q 612 321 568 241 Q 527 174 429 175 Q 320 186 261 268 Q 165 431 104 371 Q 44 303 31 309 Q -190 367 75 469" stroke-linecap="round" />
+</g>
+<g transform="matrix(-0.68 -1.05 2.02 -1.31 38.63 -17.81)"  >
+<path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(229,229,180); fill-rule: nonzero; opacity: 1;"  transform=" translate(-236.15, -327.74)" d="M 75 469 Q 174 491 247 387 Q 299 299 326 277 Q 433 177 496 306 Q 543 468 575 405 Q 612 321 568 241 Q 527 174 429 175 Q 320 186 261 268 Q 165 431 104 371 Q 44 303 31 309 Q -190 367 75 469" stroke-linecap="round" />
+</g>
+</svg>

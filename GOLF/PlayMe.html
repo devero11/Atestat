@@ -1,0 +1,148 @@
+<html>
+    <link rel="stylesheet" type="text/css" href="PlayMe.css" />
+    <head>
+        <title>PlayMe</title>
+    </head>
+    <body> 
+
+        <div id="hole"> </div>
+        <button id="ball" onclick = "ballSel()">
+            <div id="direction"> </div>
+        </button>
+        
+        
+        <button id="PlayButton" onclick = "delayed()">PLAY.</button>
+        
+
+<nav>
+  <a href="index.html">How To</a>
+  <a href="PlayMe.html">Play</a>
+  <a href="Source.html">Source</a>
+  <a href="Contact.html">Contact Me</a>
+  <a href="Duck.html">Duck</a>
+  <div class="animation start-home"></div>
+</nav>
+
+        <div id="dropdown">
+
+        </div>
+        
+        
+        <script>
+            const button = document.getElementById("PlayButton");
+            const ball = document.getElementById("ball");
+            const rotationDiv = document.getElementById("direction");
+            const Menu = document.getElementById("dropdown");
+            const scoreText = document.getElementById("score");
+            const hole = document.getElementById("hole");
+            var xPos = document.documentElement.clientWidth/2;
+            var yPos = document.documentElement.clientHeight/2;
+            var unit = document.documentElement.clientWidth/2000;
+            
+            var xVelocity=0;
+            var yVelocity= 0;
+            var xMouse;
+            var yMouse;
+            var xMouse2;
+            var yMouse2;
+            var isClicked = false;
+            var isReady = false;
+            var rot = 0;
+            var scored = true;
+            var score=-1;
+            function delayed(){
+                setTimeout(hide, 2500);
+            }
+            function hide(){
+            button.style.display = 'none';
+            ball.style.display = 'block';
+            hole.style.opacity = '1';
+                Menu.style.opacity = '0';
+            var myVar = setInterval(updatePos, 10);
+            
+            }
+            
+            function updatePos(){
+               
+                if(ball.offsetTop<10 || ball.offsetTop>document.documentElement.clientHeight-60){
+                        yVelocity=-yVelocity;
+                    }
+                    if(ball.offsetLeft<30 || ball.offsetLeft>document.documentElement.clientWidth-60){
+                        xVelocity=-xVelocity;
+                    }
+                xVelocity-= xVelocity/100;
+                yVelocity-= yVelocity/100;
+                xPos+=((unit*xVelocity));
+                yPos+=((unit*yVelocity));
+                ball.style.left = (xPos)+'px';
+                ball.style.top = (yPos)+'px';
+                
+                velocityCalc();
+                if(ball !== document.querySelector(":focus")){
+                    isClicked=false;
+                    rotationDiv.style.height = '0';
+                }else{
+                    if(yMouse-yMouse2 < 0){
+                    rot = -(Math.PI-Math.atan((xMouse-xMouse2)/(yMouse-yMouse2)));
+                    }else{
+                        rot = Math.atan((xMouse-xMouse2)/(yMouse-yMouse2))
+                    }
+                    ball.style.transform = `rotate(${-rot}rad)`;
+                    rotationDiv.style.height = Math.sqrt((xMouse-xMouse2)*(xMouse-xMouse2)+(yMouse-yMouse2)*(yMouse-yMouse2))/25 + 'vh';
+                    isClicked=true;
+                    isReady=true;
+                }
+                window.addEventListener("mousemove", function(e){
+                    xMouse2 = e.x; 
+                    yMouse2 = e.y; 
+                    
+                });
+                if(scored == true)
+                {hole.style.left= Math.floor(Math.random() * (document.documentElement.clientWidth-120))+50+ 'px';
+                hole.style.top = Math.floor(Math.random() * (document.documentElement.clientHeight-120))+50+ 'px';
+                
+                 score+=1;
+                xPos = document.documentElement.clientWidth/2;
+                yPos = document.documentElement.clientHeight/2;
+                 
+                 scored = false;
+                }
+            
+                if( xPos >= hole.offsetLeft  && yPos >= hole.offsetTop && xPos <= hole.offsetLeft+hole.offsetWidth  && yPos <= hole.offsetTop+hole.offsetHeight){
+                    yVelocity=0;
+                    xVelocity=0;
+                         scored = true;
+                    
+                   
+                }
+            }
+            function ballSel(){
+                window.addEventListener("click", function(e){
+                    if(ball == document.querySelector(":focus")){
+                    xMouse = e.x; 
+                    yMouse = e.y;}
+                    else{
+                      xMouse2 = e.x; 
+                        yMouse2 = e.y;  
+                    }
+                    
+                });
+
+            }
+            function velocityCalc(){
+                if(isReady==true && isClicked==false){
+                    
+                    xVelocity = (xMouse-xMouse2)/25;
+                    yVelocity = (yMouse-yMouse2)/25;
+                    isReady=false;
+                    
+                }
+            }
+            
+            
+        </script>
+        
+
+        
+    </body>
+</html>
